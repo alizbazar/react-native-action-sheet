@@ -45,7 +45,8 @@ var styles = StyleSheet.create({
         left: 0,
         right: 0,
         backgroundColor: 'transparent',
-        position: 'absolute'
+        position: 'absolute',
+        zIndex: 999
     },
     emptyOverlay: {
         backgroundColor: 'transparent',
