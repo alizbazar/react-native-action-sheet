@@ -5,13 +5,14 @@
 'use strict';
 
 import React, { Component } from 'react';
+var createReactClass = require('create-react-class');
 import {
   Animated, StyleSheet, View, Dimensions
 } from 'react-native';
 
 const DEFAULT_ANIMATE_TIME = 300;
 
-module.exports = React.createClass({
+module.exports = createReactClass({
     getInitialState() {
         return {
             fadeAnim: new Animated.Value(0),
