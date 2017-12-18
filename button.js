@@ -5,6 +5,7 @@
 'use strict'
 
 import React, { Component } from 'react';
+var createReactClass = require('create-react-class');
 import {
   StyleSheet,
   TouchableOpacity,
@@ -12,7 +13,7 @@ import {
   Text
 } from 'react-native';
 
-module.exports = React.createClass({
+module.exports = createReactClass({
     render: function() {
         return (
             <TouchableOpacity
