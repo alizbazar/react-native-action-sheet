@@ -7,6 +7,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+var createReactClass = require('create-react-class');
 import {
   StyleSheet,
   TouchableOpacity,
@@ -18,7 +19,7 @@ var Button = require('./button.js');
 var Overlay = require('./overlay.js');
 var Sheet = require('./sheet.js');
 
-module.exports =  React.createClass({
+module.exports =  createReactClass({
     getDefaultProps: function() {
         return {
             cancelText: 'Cancel',
