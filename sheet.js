@@ -5,6 +5,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+var createReactClass = require('create-react-class');
 import {
   Animated, StyleSheet, View, Dimensions
 } from 'react-native';
@@ -12,7 +13,7 @@ import {
 const DEFAULT_BOTTOM = -300;
 const DEFAULT_ANIMATE_TIME = 300;
 
-module.exports = React.createClass({
+module.exports = createReactClass({
     getInitialState: function() {
         return {
             bottom: new Animated.Value(DEFAULT_BOTTOM)
