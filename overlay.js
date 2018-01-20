@@ -13,11 +13,9 @@ import {
 const DEFAULT_ANIMATE_TIME = 300;
 
 module.exports = createReactClass({
-    state = {
-        isRendered: false,
-    }
     getInitialState() {
         return {
+            isRendered: false,
             fadeAnim: new Animated.Value(0),
             overlayStyle: styles.emptyOverlay, //on android opacity=0 also can cover screen, so use overlayStyle fix it
         };
