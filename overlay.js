@@ -13,6 +13,9 @@ import {
 const DEFAULT_ANIMATE_TIME = 300;
 
 module.exports = createReactClass({
+    state = {
+        isRendered: false,
+    }
     getInitialState() {
         return {
             fadeAnim: new Animated.Value(0),
@@ -20,10 +23,17 @@ module.exports = createReactClass({
         };
     },
     onAnimatedEnd() {
-        !this.props.visible&&this.setState({overlayStyle:styles.emptyOverlay});
+        if (!this.props.visible) {
+            this.setState({
+                isRendered: false,
+            })
+        }
     },
     componentWillReceiveProps(newProps) {
-        newProps.visible&&this.setState({overlayStyle: styles.fullOverlay});
+        newProps.visible&&this.setState({
+            overlayStyle: styles.fullOverlay,
+            isRendered: true,
+        });
         return Animated.timing(this.state.fadeAnim, {
             toValue: newProps.visible ? 1 : 0,
             duration: DEFAULT_ANIMATE_TIME
@@ -31,6 +41,7 @@ module.exports = createReactClass({
     },
 
     render() {
+        if (!this.state.isRendered) return null
         return (
             <Animated.View style={[this.state.overlayStyle, {opacity: this.state.fadeAnim}]}>
                 {this.props.children}
